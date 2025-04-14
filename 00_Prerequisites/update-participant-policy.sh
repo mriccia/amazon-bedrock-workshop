@@ -28,6 +28,9 @@ sed -i 's/prod-6dw3qvchef7zy/prod-4dlfvry4v5hbi/g' $POLICY_FILE
 # Swap Claude 3 Haiku for 3.5 Haiku
 sed -i 's/prod-ozonys2hmmpeu/prod-5oba7y7jpji56/g' $POLICY_FILE
 
+# Swap another model for 3.5 v2 Sonnet
+sed -i 's/prod-ariujvyzvd2qy/prod-cx7ovbu5wex7g/g' $POLICY_FILE
+
 echo "Checking version count"
 VERSION_COUNT=$(aws iam list-policy-versions --policy-arn $POLICY_ARN --query 'length(Versions)' --output text)
 
