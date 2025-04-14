@@ -196,7 +196,10 @@ def create_agent_role(agent_name, agent_foundation_model, kb_id=None):
         {
             "Sid": "AmazonBedrockAgentBedrockFoundationModelPolicy",
             "Effect": "Allow",
-            "Action": "bedrock:InvokeModel",
+            "Action": [
+                "bedrock:InvokeModel",
+                "bedrock:InvokeModelWithResponseStream"
+            ],
             "Resource": [
                 f"arn:aws:bedrock:{region}::foundation-model/{agent_foundation_model}"
             ]
